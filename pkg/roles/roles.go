@@ -29,8 +29,8 @@ func Delete(role string, identifier string) error {
 	return manager.Delete(identifier, role)
 }
 
-func CheckStatus(role string, identifier string) error {
-	status := manager.GetStatus(identifier, role)
+func CheckStatus(identifier string, roles ...string) error {
+	status := manager.GetStatus(identifier, roles...)
 
 	if status != entities.Active {
 		return core.UnActive

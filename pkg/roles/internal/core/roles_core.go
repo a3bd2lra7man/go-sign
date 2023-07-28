@@ -21,6 +21,6 @@ func (m RolesManager) Delete(identifier string, role string) error {
 	return m.dao.Delete(identifier, role)
 }
 
-func (m RolesManager) GetStatus(identifier string, role string) entities.RoleStatus {
-	return m.dao.GetStatus(identifier, role)
+func (m RolesManager) GetStatus(identifier string, roles ...string) entities.RoleStatus {
+	return m.dao.GetStatus(identifier, roles...)
 }

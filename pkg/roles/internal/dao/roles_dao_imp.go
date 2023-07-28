@@ -39,10 +39,10 @@ func (d rolesDao) Delete(id string, role string) error {
 	return nil
 }
 
-func (d rolesDao) GetStatus(id string, role string) entities.RoleStatus {
+func (d rolesDao) GetStatus(id string, role ...string) entities.RoleStatus {
 
 	var roleDoc entities.UserRole
-	err := d.FindOne(context.Background(), bson.D{{Key: "identifier", Value: id}, {Key: "role", Value: role}}).Decode(&roleDoc)
+	err := d.FindOne(context.Background(), bson.D{{Key: "identifier", Value: id}, {Key: "role", Value: bson.M{"$in": role}}}).Decode(&roleDoc)
 
 	if err != nil {
 		return entities.UnFound
