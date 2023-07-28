@@ -1,6 +1,6 @@
 module github.com/a3bd2lra7man/go-sign
 
-go 1.20
+go 1.20 
 
 require (
 	go.mongodb.org/mongo-driver v1.12.0
