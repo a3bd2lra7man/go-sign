@@ -21,13 +21,13 @@ func New(db *mongo.Database) otpDao {
 
 	col.Indexes().CreateOne(context.Background(), mongo.IndexModel{
 		Keys:    bson.D{{Key: "created_at", Value: 1}},
-		Options: options.Index().SetExpireAfterSeconds(int32(time.Now().Add(time.Hour).Unix())), // Will be removed after 24 Hours.
+		Options: options.Index().SetExpireAfterSeconds(int32(time.Now().Add(time.Hour).Unix())), // Will be removed after 1 Hour.
 	})
 	return otpDao{col}
 }
 
 func (d otpDao) Save(identifier, code, role string) error {
-	var doc = bson.D{{Key: "$set", Value: bson.D{{Key: "identifier", Value: identifier}, {Key: "role", Value: role}, {Key: "code", Value: code}, {Key: "expireTime", Value: time.Now().Add(time.Minute * 5)}}}}
+	var doc = bson.D{{Key: "$set", Value: bson.D{{Key: "identifier", Value: identifier}, {Key: "role", Value: role}, {Key: "code", Value: code}, {Key: "expireTime", Value: time.Now().Add(time.Minute * 5)}, {Key: "created_at", Value: time.Now().Unix()}}}}
 	_, err := d.UpdateOne(context.Background(), bson.D{{Key: "identifier", Value: identifier}, {Key: "role", Value: role}}, doc, options.Update().SetUpsert(true))
 
 	if err != nil {

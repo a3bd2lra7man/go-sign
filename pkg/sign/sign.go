@@ -1,10 +1,14 @@
 package sign
 
 import (
+	"time"
+
+	errs "github.com/a3bd2lra7man/go-sign/pkg/err"
 	"github.com/a3bd2lra7man/go-sign/pkg/otp"
 	"github.com/a3bd2lra7man/go-sign/pkg/roles"
 	"github.com/a3bd2lra7man/go-sign/pkg/sign/internal/core"
 	"github.com/a3bd2lra7man/go-sign/pkg/sign/internal/dao"
+	"github.com/a3bd2lra7man/jwt"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
@@ -71,4 +75,38 @@ func ConfirmCode(identifier, role, code string) error {
 	}
 
 	return nil
+}
+
+func RefreshToken(token, refresh, aud string) (jwt.JwtToken, error) {
+	jwtToken, err := jwt.Get(token, refresh)
+	if err != nil {
+		return jwtToken, err
+	}
+
+	err = jwt.Delete(jwtToken.Id)
+
+	if err != nil {
+		return jwtToken, err
+	}
+	id, err := jwt.GetClaim(token, "id")
+	if err != nil {
+		return jwtToken, err
+	}
+	_id, ok := id.(string)
+	if !ok {
+		return jwtToken, errs.UnExpectedError{}
+	}
+
+	rolesArr := roles.GetUserRoles(_id)
+	jwtToken, err = jwt.Create(map[string]interface{}{"roles": rolesArr, "id": _id}, time.Hour, aud)
+
+	return jwtToken, err
+}
+
+func CreateToken(id, aud string) (jwt.JwtToken, error) {
+	rolesArr := roles.GetUserRoles(id)
+	return jwt.Create(map[string]interface{}{
+		"id":    id,
+		"roles": rolesArr,
+	}, time.Hour, aud)
 }

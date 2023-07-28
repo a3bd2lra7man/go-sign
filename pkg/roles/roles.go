@@ -42,3 +42,7 @@ func CheckStatus(identifier string, roles ...string) error {
 func GetAllHasRole(role string) {
 
 }
+
+func GetUserRoles(id string) []string {
+	return []string{}
+}
