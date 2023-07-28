@@ -1,8 +1,8 @@
 package core
 
 import (
-	"github.com/a3bd2lra7man/sign/pkg/roles/internal/dao"
-	"github.com/a3bd2lra7man/sign/pkg/roles/internal/entities"
+	"github.com/a3bd2lra7man/go-sign/pkg/roles/internal/dao"
+	"github.com/a3bd2lra7man/go-sign/pkg/roles/internal/entities"
 )
 
 type RolesManager struct {

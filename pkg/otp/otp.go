@@ -1,8 +1,8 @@
 package otp
 
 import (
-	"github.com/a3bd2lra7man/sign/pkg/otp/internal/core"
-	"github.com/a3bd2lra7man/sign/pkg/otp/internal/dao"
+	"github.com/a3bd2lra7man/go-sign/pkg/otp/internal/core"
+	"github.com/a3bd2lra7man/go-sign/pkg/otp/internal/dao"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

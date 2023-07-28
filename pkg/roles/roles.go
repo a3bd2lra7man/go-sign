@@ -1,9 +1,9 @@
 package roles
 
 import (
-	"github.com/a3bd2lra7man/sign/pkg/roles/internal/core"
-	"github.com/a3bd2lra7man/sign/pkg/roles/internal/dao"
-	"github.com/a3bd2lra7man/sign/pkg/roles/internal/entities"
+	"github.com/a3bd2lra7man/go-sign/pkg/roles/internal/core"
+	"github.com/a3bd2lra7man/go-sign/pkg/roles/internal/dao"
+	"github.com/a3bd2lra7man/go-sign/pkg/roles/internal/entities"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

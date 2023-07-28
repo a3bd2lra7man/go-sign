@@ -4,8 +4,8 @@ import (
 	"testing"
 	"time"
 
-	errs "github.com/a3bd2lra7man/sign/pkg/err"
-	"github.com/a3bd2lra7man/sign/pkg/otp/internal/entities"
+	errs "github.com/a3bd2lra7man/go-sign/pkg/err"
+	"github.com/a3bd2lra7man/go-sign/pkg/otp/internal/entities"
 )
 
 type mockDao struct {

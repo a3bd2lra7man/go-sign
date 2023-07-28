@@ -7,7 +7,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/a3bd2lra7man/sign/pkg/otp/internal/entities"
+	"github.com/a3bd2lra7man/go-sign/pkg/otp/internal/entities"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

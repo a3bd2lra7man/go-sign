@@ -1,10 +1,10 @@
 package sign
 
 import (
-	"github.com/a3bd2lra7man/sign/pkg/otp"
-	"github.com/a3bd2lra7man/sign/pkg/roles"
-	"github.com/a3bd2lra7man/sign/pkg/sign/internal/core"
-	"github.com/a3bd2lra7man/sign/pkg/sign/internal/dao"
+	"github.com/a3bd2lra7man/go-sign/pkg/otp"
+	"github.com/a3bd2lra7man/go-sign/pkg/roles"
+	"github.com/a3bd2lra7man/go-sign/pkg/sign/internal/core"
+	"github.com/a3bd2lra7man/go-sign/pkg/sign/internal/dao"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

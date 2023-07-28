@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/a3bd2lra7man/sign/pkg/otp/internal/dao"
+	"github.com/a3bd2lra7man/go-sign/pkg/otp/internal/dao"
 )
 
 type OtpManager struct {

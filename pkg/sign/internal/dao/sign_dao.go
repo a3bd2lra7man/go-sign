@@ -1,6 +1,6 @@
 package dao
 
-import "github.com/a3bd2lra7man/sign/pkg/sign/internal/entities"
+import "github.com/a3bd2lra7man/go-sign/pkg/sign/internal/entities"
 
 type ISingDao interface {
 	GetUser(identifier string) (entities.User, error)

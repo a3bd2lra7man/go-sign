@@ -1,8 +1,8 @@
 package core
 
 import (
-	errs "github.com/a3bd2lra7man/sign/pkg/err"
-	"github.com/a3bd2lra7man/sign/pkg/sign/internal/dao"
+	errs "github.com/a3bd2lra7man/go-sign/pkg/err"
+	"github.com/a3bd2lra7man/go-sign/pkg/sign/internal/dao"
 	"golang.org/x/crypto/bcrypt"
 )
 

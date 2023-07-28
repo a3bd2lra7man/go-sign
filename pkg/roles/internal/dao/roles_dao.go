@@ -1,6 +1,6 @@
 package dao
 
-import "github.com/a3bd2lra7man/sign/pkg/roles/internal/entities"
+import "github.com/a3bd2lra7man/go-sign/pkg/roles/internal/entities"
 
 type IRoleDao interface {
 	ChangeStatus(id string, role string, status entities.RoleStatus) error

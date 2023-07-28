@@ -3,8 +3,8 @@ package dao
 import (
 	"context"
 
-	errs "github.com/a3bd2lra7man/sign/pkg/err"
-	"github.com/a3bd2lra7man/sign/pkg/sign/internal/entities"
+	errs "github.com/a3bd2lra7man/go-sign/pkg/err"
+	"github.com/a3bd2lra7man/go-sign/pkg/sign/internal/entities"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"

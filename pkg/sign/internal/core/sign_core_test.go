@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/a3bd2lra7man/sign/pkg/sign/internal/entities"
+	"github.com/a3bd2lra7man/go-sign/pkg/sign/internal/entities"
 	"golang.org/x/crypto/bcrypt"
 )
 
